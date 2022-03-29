@@ -1,0 +1,14 @@
+.right-bar-online {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #00fc84;
+    position: absolute;
+    top: -2px;
+    right: 0;
+    border: 2px solid white;
+}
+
+.right-bar-username {
+    font-weight: 500;
+}

@@ -8,6 +8,8 @@ import {
     School,
     WorkOutline
 } from '@material-ui/icons';
+import CloseFriends from "../closeFriends/CloseFriends";
+import { Users } from '../../dummyData';
 import './sidebar.css';
 
 export default function Sidebar() {
@@ -55,42 +57,7 @@ export default function Sidebar() {
                 <button className="side-bar-button">Show More</button>
                 <hr className='side-bar-hr'/>
                 <ul className="side-bar-friend-list">
-                    <li className="side-bar-friend">
-                        <img className='side-bar-friend-img' src={'assets/person/2.jpeg'} alt='' />
-                        <span className='side-bar-friend-name'> Max Paine </span>
-                    </li>
-                    <li className="side-bar-friend">
-                        <img className='side-bar-friend-img' src={'assets/person/2.jpeg'} alt='' />
-                        <span className='side-bar-friend-name'> Max Paine </span>
-                    </li>
-                    <li className="side-bar-friend">
-                        <img className='side-bar-friend-img' src={'assets/person/2.jpeg'} alt='' />
-                        <span className='side-bar-friend-name'> Max Paine </span>
-                    </li>
-                    <li className="side-bar-friend">
-                        <img className='side-bar-friend-img' src={'assets/person/2.jpeg'} alt='' />
-                        <span className='side-bar-friend-name'> Max Paine </span>
-                    </li>
-                    <li className="side-bar-friend">
-                        <img className='side-bar-friend-img' src={'assets/person/2.jpeg'} alt='' />
-                        <span className='side-bar-friend-name'> Max Paine </span>
-                    </li>
-                    <li className="side-bar-friend">
-                        <img className='side-bar-friend-img' src={'assets/person/2.jpeg'} alt='' />
-                        <span className='side-bar-friend-name'> Max Paine </span>
-                    </li>
-                    <li className="side-bar-friend">
-                        <img className='side-bar-friend-img' src={'assets/person/2.jpeg'} alt='' />
-                        <span className='side-bar-friend-name'> Max Paine </span>
-                    </li>
-                    <li className="side-bar-friend">
-                        <img className='side-bar-friend-img' src={'assets/person/2.jpeg'} alt='' />
-                        <span className='side-bar-friend-name'> Max Paine </span>
-                    </li>
-                    <li className="side-bar-friend">
-                        <img className='side-bar-friend-img' src={'assets/person/2.jpeg'} alt='' />
-                        <span className='side-bar-friend-name'> Max Paine </span>
-                    </li>
+                    { Users.map( user => <CloseFriends key={user.id} user={user} />) }
                 </ul>
             </div>
         </div>
