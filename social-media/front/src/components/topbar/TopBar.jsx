@@ -1,16 +1,16 @@
-import {
-    Search,
-    Person,
-    Chat,
-    Notifications,
-} from '@material-ui/icons';
+import { Link } from 'react-router-dom';
+import {Search, Person, Chat, Notifications,} from '@material-ui/icons';
 import './topbar.css';
 
 export default function TopBar() {
+    const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
+
     return (
         <div className='top-bar-container'>
             <div className='top-bar-left'>
-                <span className='logo'>Social media</span>
+                <Link to="/" className="link">
+                    <span className='logo'>Social media</span>
+                </Link>
             </div>
             <div className='top-bar-center'>
                 <div className='search-bar'>
@@ -47,7 +47,7 @@ export default function TopBar() {
                     </span>
                 </div>
             </div>
-            <img src={'/assets/person/1.jpeg'} className='top-bar-img' alt=''/>
+            <img src={`${publicFolder}person/1.jpeg`} className='top-bar-img' alt='top-bar'/>
         </div>
     )
 }

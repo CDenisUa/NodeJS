@@ -19,6 +19,13 @@
 .post-top-left {
     display: flex;
     align-items: center;
+    cursor: pointer;
+}
+
+.post-top-left-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 .post-profile-img {
@@ -32,6 +39,11 @@
     font-size: 15px;
     font-weight: 500;
     margin: 0 10px;
+}
+
+.post-user-date {
+    font-size: 12px;
+    color: gray;
 }
 
 .post-date {
@@ -77,5 +89,8 @@
     font-size: 15px;
 }
 
+.stub {
+    border: 1px solid #d3d3d3;
+}
 
 

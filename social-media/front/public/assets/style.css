@@ -19,3 +19,7 @@
 ::-webkit-scrollbar {
     width: 5px;
 }
+
+.link {
+    text-decoration: none;
+}
