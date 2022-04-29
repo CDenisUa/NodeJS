@@ -65,6 +65,11 @@
     cursor: pointer;
 }
 
+.login-button:disabled,
+.login-register-button:disabled {
+    cursor: not-allowed;
+}
+
 .login-forgot {
     text-align: center;
     color: #2fc1ff;
