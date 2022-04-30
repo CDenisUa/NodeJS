@@ -108,6 +108,13 @@
     margin-right: 10px;
 }
 
+.top-bar-img-wrap {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    min-width: 50px;
+}
+
 .link {
     display: flex;
     align-items: center;

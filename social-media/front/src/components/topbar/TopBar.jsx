@@ -1,10 +1,12 @@
-import { Link } from 'react-router-dom';
-import {Search, Person, Chat, Notifications,} from '@material-ui/icons';
+import {Link, NavLink} from 'react-router-dom';
+import { Search, Person, Chat, Notifications } from '@material-ui/icons';
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 import './topbar.css';
 
 export default function TopBar() {
     const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
-
+    const { user } = useContext(AuthContext);
     return (
         <div className='top-bar-container'>
             <div className='top-bar-left'>
@@ -47,7 +49,19 @@ export default function TopBar() {
                     </span>
                 </div>
             </div>
-            <img src={`${publicFolder}person/1.jpeg`} className='top-bar-img' alt='top-bar'/>
+            <NavLink
+                to={`/profile/${user.username}`}
+                className='top-bar-img-wrap'
+            >
+                <img
+                    src={ user.profilePicture
+                        ? user.profilePicture
+                        : `${publicFolder}person/noAvatar.jpeg`}
+                    className='top-bar-img'
+                    alt='top-bar'
+                />
+            </NavLink>
+
         </div>
     )
 }

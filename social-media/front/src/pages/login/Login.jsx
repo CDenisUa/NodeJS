@@ -3,11 +3,13 @@ import { useContext, useRef } from "react";
 import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
 import { CircularProgress } from "@material-ui/core";
+import { useNavigate } from "react-router-dom";
 
 export default function Login(){
     const email = useRef();
     const password = useRef();
-    const { user, isFetching, error, dispatch } = useContext(AuthContext)
+    const navigate = useNavigate();
+    const { isFetching, dispatch } = useContext(AuthContext)
 
     const handleClick = (event) => {
         event.preventDefault();
@@ -16,8 +18,6 @@ export default function Login(){
             password: password.current.value },
             dispatch)
     }
-    console.log(user)
-
 
     return (
         <div className='login'>
@@ -55,6 +55,7 @@ export default function Login(){
                         </button>
                         <span className="login-forgot">Forgot password?</span>
                         <button
+                            onClick={() => navigate('/register')}
                             className="login-register-button"
                             disabled={ isFetching }
                         >
