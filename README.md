@@ -7,24 +7,24 @@
 ## *The main job is to create the api for the application*
 
 *Posts*
-> Create post
-> Update post
-> Delete post 
-> Like or dislike post
-> Get a post 
-> Get time line of post
-> Get all posts
-> Upload file
+> 1. Create post. 
+> 2. Update post. 
+> 3. Delete post.  
+> 4. Like or dislike post. 
+> 5. Get a post.  
+> 6. Get time line of post. 
+> 7. Get all posts. 
+> 8. Upload file. 
 
 *User*
-> Register user
-> Login
-> Update user
-> Delete user
-> Get user
-> Folow user
-> Unfolow user
-> User
+> 1. Register user. 
+> 2. Login. 
+> 3. Update user. 
+> 4. Delete user. 
+> 5. Get user. 
+> 6. Folow user. 
+> 7. Unfolow user. 
+> 8. User. 
 
 *Libraries that are used in the project:*
 ```
@@ -42,3 +42,4 @@
     "path": "^0.12.7"
   }
 ```
+-------------------
