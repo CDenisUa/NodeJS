@@ -50,11 +50,11 @@ export default function TopBar() {
                 </div>
             </div>
             <NavLink
-                to={`/profile/${user.username}`}
+                to={`/profile/${user?.username}`}
                 className='top-bar-img-wrap'
             >
                 <img
-                    src={ user.profilePicture
+                    src={ user?.profilePicture
                         ? user.profilePicture
                         : `${publicFolder}person/noAvatar.jpeg`}
                     className='top-bar-img'

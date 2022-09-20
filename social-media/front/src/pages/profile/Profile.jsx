@@ -1,7 +1,7 @@
 import TopBar from "../../components/topbar/TopBar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Feed from "../../components/feed/Feed";
-import Rightbar from "../../components/rightbar/Rightbar";
+import RightBar from "../../components/rightbar/RightBar";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import cn from 'classnames';
@@ -30,12 +30,12 @@ export default function Profile() {
                         <div className="profile-cover">
                             <img
                                 className='profile-cover-img'
-                                src={ user.coverPicture || `${publicFolder}post/3.jpeg`}
+                                src={ user.coverPicture ? user.coverPicture : publicFolder + 'person/noCover.png'}
                                 alt="profile"
                             />
                             <img
                                 className={cn('profile-user-img ',{ 'stub-profile': !user.profilePicture })}
-                                src={ user.profilePicture || `${publicFolder}person/noAvatar.jpeg`}
+                                src={ user.profilePicture ?  user.profilePicture : publicFolder + 'person/noAvatar.jpeg'}
                                 alt="profile"
                             />
                         </div>
@@ -46,7 +46,7 @@ export default function Profile() {
                     </div>
                     <div className="profile-right-bottom">
                         <Feed username={ username }/>
-                        <Rightbar user={ user }  />
+                        <RightBar user={ user }  />
                     </div>
                 </div>
             </div>

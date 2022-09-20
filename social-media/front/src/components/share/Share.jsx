@@ -13,7 +13,7 @@ export default function Share() {
     const submitHandler = async (e) => {
         e.preventDefault();
         const newPost = {
-            userId: user._id,
+            userId: user?._id,
             description: descriptionRef.current.value,
         };
         if (file) {
@@ -22,14 +22,13 @@ export default function Share() {
             data.append("name", fileName);
             data.append("file", file);
             newPost.img = fileName;
-            console.log(newPost);
             try {
                 await axios.post("/upload", data);
             } catch (err) {}
         }
         try {
             await axios.post("/posts", newPost);
-            // window.location.reload();
+            window.location.reload();
         } catch (err) {}
     };
 
@@ -37,10 +36,10 @@ export default function Share() {
         <div className='share'>
             <div className="share-wrapper">
                 <div className="share-top">
-                    <img className='share-profile-img ' src={ user.profilePicture ? user.profilePicture : `${publicFolder}person/noAvatar.jpeg` } alt="" />
+                    <img className='share-profile-img ' src={ user?.profilePicture ? user.profilePicture : `${publicFolder}person/noAvatar.jpeg` } alt="" />
                     <input
                         ref={descriptionRef}
-                        placeholder={`What's is your mind ${user.username}?`}
+                        placeholder={`What's is your mind ${user?.username}?`}
                         type="text"
                         className='share-input'
                     />

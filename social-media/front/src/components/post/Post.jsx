@@ -31,16 +31,16 @@ export default function Post({ post }) {
     }
 
     useEffect(() => {
-        setIsLiked(post.likes.includes(currentUser._id))
-    },[currentUser._id, post.likes])
+        setIsLiked(post?.likes.includes(currentUser?._id))
+    },[currentUser?._id, post?.likes])
 
     useEffect( () => {
         (async () => {
-            const response = await axios.get(`${rootApiUrl}users?userId=${post.userId}`);
+            const response = await axios.get(`${rootApiUrl}users?userId=${post?.userId}`);
             setUser(response.data)
         })()
 
-    },[post.userId, rootApiUrl])
+    },[post?.userId, rootApiUrl])
     return (
         <div className="post">
             <div className="post-wrapper">
@@ -50,7 +50,7 @@ export default function Post({ post }) {
                             className={cn('post-profile-img',{'stub': !user.profilePicture})}
                             src={ user.profilePicture
                                 ? profilePicture
-                                : `${publicFolder}person/noAvatar.png` }
+                                : `${publicFolder}person/noAvatar.jpeg` }
                             alt="post profile"/>
                         <span className='post-user-name'>{ user?.username }</span>
                         <span className='post-user-date'>{ format(post?.createdAt) }</span>

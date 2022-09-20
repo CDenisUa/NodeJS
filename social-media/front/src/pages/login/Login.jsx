@@ -1,11 +1,11 @@
-import './login.css';
 import { useContext, useRef } from "react";
 import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
 import { CircularProgress } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
+import './login.css';
 
-export default function Login(){
+export default function Login() {
     const email = useRef();
     const password = useRef();
     const navigate = useNavigate();
@@ -17,6 +17,7 @@ export default function Login(){
             email: email.current.value,
             password: password.current.value },
             dispatch)
+
     }
 
     return (
@@ -55,7 +56,7 @@ export default function Login(){
                         </button>
                         <span className="login-forgot">Forgot password?</span>
                         <button
-                            onClick={() => navigate('/register')}
+                            onClick={ () => navigate('/register') }
                             className="login-register-button"
                             disabled={ isFetching }
                         >
