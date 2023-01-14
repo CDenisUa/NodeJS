@@ -1,20 +1,12 @@
-// Core
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';
-// Services
-import { UserService } from 'src/user/user.service';
-// Controllers
-import { UserController } from './user.controller';
-// Entities
-// import { UserEntity } from './user.entity';
+import { UserController } from '@app/user/user.controller';
+import { UserService } from '@app/user/user.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { UserEntity } from './user.entity';
 
-
-@Module ({
-    // imports: [TypeOrmModule.forFeature([UserEntity])],
-    controllers: [UserController],
-    providers: [UserService],
+@Module({
+  imports: [TypeOrmModule.forFeature([UserEntity])],
+  controllers: [UserController],
+  providers: [UserService],
 })
-
-export class UserModule {
-
-}
+export class UserModule {}
